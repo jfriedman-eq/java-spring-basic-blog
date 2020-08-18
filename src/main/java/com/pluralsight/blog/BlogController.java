@@ -10,15 +10,15 @@ import java.util.List;
 
 @Controller
 public class BlogController {
-    private PostRepository postRespository;
+    private PostRepository postRepository;
 
     public BlogController(PostRepository p) {
-        this.postRespository = p;
+        this.postRepository = p;
     }
 
     @RequestMapping("/")
     public String listPosts(ModelMap m) {
-        List<Post> l = this.postRespository.getAllPosts();
+        List<Post> l = this.postRepository.getAllPosts();
         m.put("title", "Blog Post 1");
         m.put("posts", l);
 
